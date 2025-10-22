@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 Guard | Wallet Scam Reporting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            100: '#d9f9ff',
+                            200: '#bac7ff',
+                            300: '#4cc9f0',
+                            400: '#4361ee',
+                            500: '#3a0ca3',
+                            600: '#2d00a3',
+                        },
+                        dark: {
+                            900: '#09090b',
+                            800: '#18181b',
+                        }
+                    },
+                    animation: {
+                        float: 'float 6s ease-in-out infinite',
+                        pulse: 'pulse 2s cubic-bezier(0.4,0,0.6,1) infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-900 text-gray-100 font-['Poppins'] min-h-screen overflow-x-hidden">
+
+    <div class="absolute top-1/4 left-10 w-8 h-8 bg-cyber-400 rounded-full filter blur-xl animate-float"></div>
+    <div class="absolute top-1/3 right-12 w-6 h-6 bg-cyber-300 rounded-full filter blur-lg animate-float delay-100"></div>
+    <div class="absolute bottom-10 left-20 w-7 h-7 bg-cyber-500 rounded-full filter blur-md animate-float delay-200"></div>
+    <div class="absolute top-1/2 left-1/2 w-8 h-8 bg-cyber-400 rounded-full filter blur-xl animate-float z-[-1]"></div>
+    <div class="absolute top-1/3 left-1/4 w-8 h-8 bg-cyber-400 rounded-full filter blur-xl animate-float z-[-1]"></div>
+    <div class="absolute bottom-1/3 right-1/2 left-1/3 w-6 h-6 bg-cyber-300 rounded-full filter blur-lg animate-float delay-100"></div>
+    <div class="absolute top-1 right-1/3 w-8 h-8 bg-cyber-400 rounded-full filter blur-xl animate-float z-[-1]"></div>
+
+    <!-- Header -->
+    <header class="custom-header w-full ">
+        <div class="max-w-7xl mx-auto flex items-center justify-between w-full">
+            <!-- Left: Logo -->
+            <div class="flex items-center">
+                <div>
+                    <img src="assets\EB3.png" alt="Logo" width="100" height="auto">
+                </div>
+            </div>
+            <!-- Center: Navigation -->
+            <nav>
+                <div class="hidden sm:flex">
+                    <div class="nav-container">
+                        <a href="#" class="transition-colors border-transparent hover:border-gray-500 text-gray-500 hover:text-white inline-flex items-center border-b-2">Home</a>
+                        <a href="/" class="hover:text-gray-400 transition-colors border-primary-600 border-cyber-400 inline-flex items-center border-b-2 ">Dashboard</a>
+                        <a href="report.html" class="transition-colors border-transparent hover:border-gray-500 text-gray-500 hover:text-white inline-flex items-center border-b-2">Report</a>
+                        <a href="#" class="transition-colors border-transparent hover:border-gray-500 text-gray-500 hover:text-white inline-flex items-center border-b-2">Search</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Right: Wallet Button -->
+            <div class="flex items-center gap-2 pr-5">
+                <div class="relative pr-5">
+                        <button id="profileButton" class="w-10 h-10 rounded-full overflow-hidden border-2 border-sky-600">
+                            <img src="https://api.dicebear.com/7.x/identicon/svg?seed=user123" alt="User profile picture" class="w-full h-full object-cover">
+                        </button>
+                        <div id="profileDropdown" class="absolute right-0 top-12 w-[150px] dark:bg-gray-800 rounded-lg shadow-xl p-2 hidden z-50">
+                            <a href="#" class="block w-full text-left px-2 py-2 rounded text-rose-400 hover:bg-slate-700 transition"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative min-h-screen flex items-center pt-24 pb-10 px-4 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="text-center lg:text-left">
+                <div class="inline-block py-2 rounded-full bg-cyber-900 text-cyber-300 mb-6 font-medium">
+                    PROTECTING YOUR CRYPTO ASSETS
+                </div>
+                <h2 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Fight Back Against<br>
+                    <span class="cyber-gradient bg-clip-text text-transparent">Crypto Scammers</span>
+                </h2>
+                <p class="text-gray-300 text-lg mb-10 max-w-xl mx-auto lg:mx-0">
+                    Report suspicious wallet addresses, validate transactions, and help make the crypto ecosystem safer for everyone. Our platform analyzes scam attempts in real-time.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <button class="cyber-gradient px-8 py-4 rounded-xl font-bold hover:opacity-90 transition-opacity">
+                        Report Scam Now
+                    </button>
+                    <button class="border-2 border-cyber-500 px-8 py-4 rounded-xl font-bold hover:bg-cyber-900/20 transition-colors">
+                        Validate Wallet
+                    </button>
+                </div>
+            </div>
+            
+            <div class="relative hidden lg:block">
+                <div class="w-full max-w-lg mx-auto relative">
+                    <div class="mt-20 star-burst-animation">
+                        <div class="report-shield group mx-auto w-96 h-96 rounded-3xl bg-dark-800 bg-opacity-50 backdrop-blur-md border-2 border-cyber-500 flex flex-col items-center justify-center p-8 relative overflow-hidden digital-grid before-glow">
+                            <model-viewer 
+                                src="assets\Logo_3D.glb" 
+                                alt="3D Model" 
+                                auto-rotate 
+                                auto-rotate-delay="0"
+                                rotation-per-second="45deg"
+                                ar
+                                style="width: 800px; height: 500px; --auto-rotate-speed: 20;">
+                            </model-viewer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animated waves -->
+        <div class="absolute bottom-0 left-0 right-0 h-32 wave-pattern opacity-10"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16">Our Impact Against Scammers</h2>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="bg-dark-800 rounded-2xl p-6 border border-dark-700 hover:border-cyber-500 transition-colors">
+                    <div class="text-5xl font-bold cyber-gradient bg-clip-text text-transparent mb-2" id="counter-1">95K</div>
+                    <p class="text-gray-400">Scams Reported</p>
+                </div>
+                
+                <div class="bg-dark-800 rounded-2xl p-6 border border-dark-700 hover:border-cyber-500 transition-colors">
+                    <div class="text-5xl font-bold cyber-gradient bg-clip-text text-transparent mb-2" id="counter-2">32M</div>
+                    <p class="text-gray-400">Assets Protected</p>
+                </div>
+                
+                <div class="bg-dark-800 rounded-2xl p-6 border border-dark-700 hover:border-cyber-500 transition-colors">
+                    <div class="text-5xl font-bold cyber-gradient bg-clip-text text-transparent mb-2" id="counter-3">174K</div>
+                    <p class="text-gray-400">Wallets Flagged</p>
+                </div>
+                
+                <div class="bg-dark-800 rounded-2xl p-6 border border-dark-700 hover:border-cyber-500 transition-colors">
+                    <div class="text-5xl font-bold cyber-gradient bg-clip-text text-transparent mb-2" id="counter-4">98%</div>
+                    <p class="text-gray-400">Accuracy Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 px-4 bg-dark-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Protect Yourself in 3 Steps</h2>
+                <p class="text-gray-400 mb-16">Our simple process helps secure the crypto ecosystem</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-dark-900 rounded-3xl p-8 border border-dark-700 relative">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 cyber-gradient rounded-full flex items-center justify-center text-white text-2xl font-bold">1</div>
+                    <h3 class="text-xl font-bold text-center mt-6 mb-4">Report a Scam</h3>
+                    <p class="text-gray-400 text-center">Submit suspicious wallet addresses or transaction IDs to our database.</p>
+                </div>
+                
+                <div class="bg-dark-900 rounded-3xl p-8 border border-dark-700 relative">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 cyber-gradient rounded-full flex items-center justify-center text-white text-2xl font-bold">2</div>
+                    <h3 class="text-xl font-bold text-center mt-6 mb-4">Validate Wallets</h3>
+                    <p class="text-gray-400 text-center">Check if a wallet address has been flagged for fraudulent activity.</p>
+                </div>
+                
+                <div class="bg-dark-900 rounded-3xl p-8 border border-dark-700 relative">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 cyber-gradient rounded-full flex items-center justify-center text-white text-2xl font-bold">3</div>
+                    <h3 class="text-xl font-bold text-center mt-6 mb-4">Stay Informed</h3>
+                    <p class="text-gray-400 text-center">Receive real-time alerts and insights on emerging scam trends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 px-4">
+        <div class="max-w-7xl mx-auto bg-dark-800 rounded-3xl p-10 md:p-20 text-center border border-dark-700">
+            <h2 class="text-4xl font-bold mb-6 leading-tight">
+                Join the Fight for a Safer<br>
+                <span class="cyber-gradient bg-clip-text text-transparent">Crypto Future</span>
+            </h2>
+            <p class="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
+                Your reports and validations contribute to a stronger, more secure Web3 ecosystem for everyone.
+            </p>
+            <button class="cyber-gradient px-10 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-opacity">
+                Get Started Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 px-4 text-gray-400 text-center">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center gap-3 mb-4 md:mb-0">
+                    <div class="w-11 h-11 cyber-gradient flex items-center justify-center rounded-xl">
+                        <img src="assets\Logo.png" alt="" width="38" height="auto" class="justify-center" >
+                    </div>
+                    <span style="font-size: 19px; line-height: 0.9;" class="text-2xl font-bold bg-clip-text text-transparent cyber-gradient">Web3
+                        <br>
+                        <span style="font-size: 23px">Guard</span>
+                    </span>
+                </div>
+                <nav class="flex gap-6">
+                    <a href="#" class="hover:text-cyber-300 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-cyber-300 transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-cyber-300 transition-colors">Contact Us</a>
+                </nav>
+            </div>
+            <p>Made by Team X</p>
+            <p>&copy; 2025 Web3Guard. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
